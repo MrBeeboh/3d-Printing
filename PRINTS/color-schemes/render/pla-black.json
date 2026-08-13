@@ -1,0 +1,20 @@
+{
+    "name" : "PLA-Black",
+    "index" : 9100,
+    "show-in-gui" : true,
+    "description" : "Shelf black PLA. CGAL front and back match so F6 is not teal/yellow.",
+
+    "colors" : {
+        "background" :         "#f8f8f8",
+        "axes-color" :         "#181818",
+        "opencsg-face-front" : "#1a1a1c",
+        "opencsg-face-back" :  "#1a1a1c",
+        "cgal-face-front" :    "#1a1a1c",
+        "cgal-face-back" :     "#1a1a1c",
+        "cgal-face-2d" :       "#1a1a1c",
+        "cgal-edge-front" :    "#000000",
+        "cgal-edge-back" :     "#000000",
+        "cgal-edge-2d" :       "#000000",
+        "crosshair" :          "#8959a8"
+    }
+}

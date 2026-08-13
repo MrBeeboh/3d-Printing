@@ -1,0 +1,20 @@
+{
+    "name" : "PLA-White",
+    "index" : 9101,
+    "show-in-gui" : true,
+    "description" : "Shelf white PLA. CGAL front and back match so F6 is not teal/yellow.",
+
+    "colors" : {
+        "background" :         "#f8f8f8",
+        "axes-color" :         "#181818",
+        "opencsg-face-front" : "#f2f2ed",
+        "opencsg-face-back" :  "#f2f2ed",
+        "cgal-face-front" :    "#f2f2ed",
+        "cgal-face-back" :     "#f2f2ed",
+        "cgal-face-2d" :       "#f2f2ed",
+        "cgal-edge-front" :    "#6a6a68",
+        "cgal-edge-back" :     "#6a6a68",
+        "cgal-edge-2d" :       "#6a6a68",
+        "crosshair" :          "#8959a8"
+    }
+}

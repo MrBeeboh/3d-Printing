@@ -1,0 +1,20 @@
+{
+    "name" : "PCB-Chroma",
+    "index" : 9103,
+    "show-in-gui" : false,
+    "description" : "Dummy PCB (green front, silver back) on chroma for compositing.",
+
+    "colors" : {
+        "background" :         "#ff00ff",
+        "axes-color" :         "#181818",
+        "opencsg-face-front" : "#3d7a3d",
+        "opencsg-face-back" :  "#c0c0c0",
+        "cgal-face-front" :    "#3d7a3d",
+        "cgal-face-back" :     "#c0c0c0",
+        "cgal-face-2d" :       "#3d7a3d",
+        "cgal-edge-front" :    "#2a542a",
+        "cgal-edge-back" :     "#7a7a7a",
+        "cgal-edge-2d" :       "#2a542a",
+        "crosshair" :          "#8959a8"
+    }
+}

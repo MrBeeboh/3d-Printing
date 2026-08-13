@@ -1,0 +1,20 @@
+{
+    "name" : "PLA-White-Chroma",
+    "index" : 9102,
+    "show-in-gui" : false,
+    "description" : "White PLA on chroma background for compositing two-tone F6 renders.",
+
+    "colors" : {
+        "background" :         "#ff00ff",
+        "axes-color" :         "#181818",
+        "opencsg-face-front" : "#f2f2ed",
+        "opencsg-face-back" :  "#f2f2ed",
+        "cgal-face-front" :    "#f2f2ed",
+        "cgal-face-back" :     "#f2f2ed",
+        "cgal-face-2d" :       "#f2f2ed",
+        "cgal-edge-front" :    "#6a6a68",
+        "cgal-edge-back" :     "#6a6a68",
+        "cgal-edge-2d" :       "#6a6a68",
+        "crosshair" :          "#8959a8"
+    }
+}
