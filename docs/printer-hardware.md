@@ -25,3 +25,11 @@
 
 - Direct-drive extruder, auto-level (CR Touch style), 220×220×250 mm build volume.
 - Full spec sheet belongs here once verified from the manual — do not guess values.
+
+## Color / extruder
+
+Stock Ender-3 V3 SE is **one hotend, one extruder**. It cannot print two colors in one job unless you pause and swap filament (M600). There is no AMS / MMU / dual nozzle on this machine.
+
+**On the shelf (2026-08-12):** 2 spools black PLA, 2 spools white PLA.
+
+Two-tone parts = two print jobs (e.g. Hive base black, lid white), then assemble. A combined one-plate STL is a single color.

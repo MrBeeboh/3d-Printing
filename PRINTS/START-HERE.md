@@ -13,6 +13,18 @@ Then open `PRINTS/START-HERE.md`.
 
 **Hive** is two parts: base + lid. The board sits on four bosses and is held with **M2.5 screws**. The lid snaps on at the short ends.
 
+## Filament on the shelf
+
+| | |
+|---|---|
+| Printer | Ender-3 V3 SE — **one extruder, one nozzle** |
+| On hand | **2× black PLA**, **2× white PLA** |
+| Two colors? | Not in one job. Print the **base in black** and the **lid in white** as two slices, then snap them together. |
+| One-plate STL | `zero3w_hive-print.stl` is **one color only** (all black or all white). Do not use it if you want two-tone. |
+| Pause-and-swap | Possible (M600 at a layer) but messy. Not worth it for Hive. |
+
+The old blue/orange previews were OpenSCAD’s cutaway colors, not a second filament. Renders below are the actual PLA.
+
 ## Tomorrow, in this order
 
 1. **Fit coupon first** (~15 min, little filament)  
@@ -34,7 +46,7 @@ Hardware: **4 × M2.5**, 6–8 mm, pan or button head. The pilots are 2.1 mm so 
 
 | | Coupon | Hive base / lid |
 |---|---|---|
-| Material | PLA is fine | PETG preferred (snaps + heat) |
+| Material | White PLA (on the shelf) | Black PLA base, white PLA lid (two jobs). PETG later if the board runs hot. |
 | Layer | 0.20 mm | 0.20 mm |
 | Walls | 3 | 3 |
 | Infill | 15% | 20% gyroid |
@@ -57,6 +69,8 @@ openscad -D 'part="lid"' -o stl/zero3w_hive-lid.stl zero3w_hive.scad
 ```
 
 ## Previews
+
+Black PLA base, white PLA lid, white PLA coupon. Green is the dummy PCB, not filament.
 
 ![Hive assembled](preview/hive-assembled.png)
 

@@ -1,5 +1,11 @@
 // Shared Radxa ZERO 3W mechanicals from official v1.11 DXF.
 // Origin: HDMI/CSI corner. GPIO along y=30. Ports along y=0.
+//
+// Filament on the shelf (2026-08-12): 2× black PLA, 2× white PLA.
+// Ender-3 V3 SE is a single extruder — one color per print job.
+// Two-tone Hive = black base + white lid as two separate slices, then snap.
+pla_black = [0.10, 0.10, 0.11];
+pla_white = [0.95, 0.95, 0.93];
 
 board_x = 65.0;
 board_y = 30.0;

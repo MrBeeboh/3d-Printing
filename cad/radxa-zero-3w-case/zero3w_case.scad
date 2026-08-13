@@ -13,6 +13,11 @@
 /* [Export] */
 part = "print"; // [preview, base, lid, print]
 
+/* [Filament] */
+// Shelf stock: 2× black PLA, 2× white PLA. SE = one color per job.
+pla_black = [0.10, 0.10, 0.11];
+pla_white = [0.95, 0.95, 0.93];
+
 /* [Board] */
 // Official outline
 board_x = 65.0;
@@ -302,19 +307,19 @@ module dummy_board() {
 }
 
 module print_plate() {
-    base();
+    color(pla_black) base();
     translate([ox + 8, oy, lid_h])
         rotate([180, 0, 0])
-            lid();
+            color(pla_white) lid();
 }
 
 // ---------------------------------------------------------------------------
-if (part == "base") base();
-else if (part == "lid") lid();
+if (part == "base") color(pla_black) base();
+else if (part == "lid") color(pla_white) lid();
 else if (part == "print") print_plate();
 else {
-    base();
+    color(pla_black) base();
     translate([0, 0, base_h - tongue_h])
-        lid();
+        color(pla_white) lid();
     dummy_board();
 }

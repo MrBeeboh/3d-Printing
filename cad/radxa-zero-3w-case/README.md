@@ -6,7 +6,7 @@ This is not a Raspberry Pi Zero case with the ports renamed. Connector positions
 
 ## Preview
 
-Assembled (dummy board in green). Three openings on the port edge: micro HDMI, USB 3.0 Host, USB 2.0 OTG (power). GPIO slot along the back. microSD on the short wall.
+Assembled (dummy board in green — that is the PCB, not filament). Printed parts: **black PLA base**, **white PLA lid**. Three openings on the port edge: micro HDMI, USB 3.0 Host, USB 2.0 OTG (power). GPIO slot along the back. microSD on the short wall.
 
 ![Assembled case](preview/assembled.png)
 
@@ -78,7 +78,7 @@ Power is the **OTG** USB-C, not the USB 3.0 port.
 
 | Setting | Value |
 |---|---|
-| Material | PETG preferred (Pi-class boards get warm). PLA is fine for a first fit check. |
+| Material | Black PLA base + white PLA lid as two jobs (what is on the shelf). PETG later if the board runs hot. |
 | Layer height | 0.20 mm |
 | Walls | 3 perimeters (2.0 mm design thickness) |
 | Infill | 20–30% gyroid |

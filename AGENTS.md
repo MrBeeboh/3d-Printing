@@ -11,6 +11,8 @@ Do **not** mix **Atom Chat** (`/home/mike/atom-chat`) or **Atom-Code** into this
 
 Hive / ZERO 3W case files live in `PRINTS/` (print tomorrow) and `cad/radxa-zero-3w-case/` (measured tray). Start at `PRINTS/START-HERE.md`.
 
+**Filament on the shelf:** 2× black PLA, 2× white PLA. The SE is single-extruder — one color per job. Renders must use those colors (black base / white lid), not OpenSCAD’s blue/orange preview scheme.
+
 ## Fusion CAD (Cursor MCP)
 
 Fusion does **not** run on HAL2026 (Linux). Live modeling uses the **KAMRUI Pinova P2** (Windows 11, Ryzen 3 7330U, 16 GB) plus an SSH tunnel to Fusion MCP port **27182**.

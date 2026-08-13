@@ -283,17 +283,17 @@ module dummy_board() {
 }
 
 module print_plate() {
-    base();
+    color(pla_black) base();
     translate([ox + 10, 0, 0])
-        lid();
+        color(pla_white) lid();
 }
 
-if (part == "base") base();
-else if (part == "lid") lid();
+if (part == "base") color(pla_black) base();
+else if (part == "lid") color(pla_white) lid();
 else if (part == "print") print_plate();
 else {
-    base();
+    color(pla_black) base();
     translate([0, 0, base_h - hook_len])
-        lid();
+        color(pla_white) lid();
     dummy_board();
 }
