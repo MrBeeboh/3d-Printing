@@ -3,7 +3,7 @@
 **Read this first. This is the canonical "send a file to the printer" workflow.**
 Applies to any AI (Hermes, Grok, Claude, Codex) working from this repo.
 **New AIs: start with `AI-QUICKSTART.md`** (self-contained) then come back here for detail.
-Last verified: 2026-08-19 (printer ONLINE, `state: ready`; coupon printed clean 217 s).
+Last verified: 2026-08-20 (preview-first workflow adopted; camera self-heal; robustness confirmed).
 
 ---
 
@@ -38,7 +38,21 @@ curl -s --max-time 5 http://192.168.0.18:7125/printer/info | head -c 200
 | **OrcaSlicer 2.4.2** | ✅ **USE THIS** | `~/Applications/OrcaSlicer.AppImage /tmp/part.stl --slice 0 --outputdir /tmp/out --load-settings "machine.json;/tmp/v3se_0.28_draft.json" --load-filaments "Creality Generic PLA @Ender-3V3-all.json"` — works headless. The operator's slicer of record. |
 | PrusaSlicer 2.7.2 | ❌ Do NOT use | Operator rejected it. The `--rotate` CLI silently ignores the full-vector form (`--rotate=90,0,0`); only single-axis `--rotate-x N` works. |
 
-Grok/other AIs: **use OrcaSlicer** with the command above. PrusaSlicer was documented here during an Orca-CLI issue in mid-Aug; that issue was resolved — this table is the current truth.
+### ⚠️ OPERATOR'S RULE (agreed 2026-08-20): PREVIEW in the FULL GUI first
+
+The **operator must SEE the part before it prints** — real layout, orientation, supports.
+The headless CLI below is for **generating the print + automation**, NOT for approval.
+
+**Approval flow (mandatory, every part):**
+1. **Present a real Orca visual preview** of the part (layout/orientation/supports):
+   - Local desktop → open the actual Orca window with the part loaded + sliced + 3D
+     preview: `~/Applications/OrcaSlicer.AppImage /path/to/part.stl` (slice in GUI).
+   - Remote → send the operator **Orca 3D preview screenshots** (top/side/isometric).
+2. **Wait for explicit "go"** — never auto-start, never auto-chain.
+3. Start the print via Moonraker (§4).
+4. **Present Fluidd** (:4408) + live camera (:8080) for near-real-time monitoring.
+
+**NEVER present a silent headless slice result as "the preview."**
 
 ### OrcaSlicer CLI recipe (verified working 2026-08-17)
 

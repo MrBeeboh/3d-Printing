@@ -7,6 +7,15 @@
 > **Hard rule: NEVER start a print without the operator's explicit "go".**
 > **NEVER auto-chain parts — each part gets its own approval.**
 >
+> **OPERATOR'S CANONICAL WORKFLOW (agreed 2026-08-20):**
+> 1. **PREVIEW in OrcaSlicer FULL GUI** — open a part, slice, and present the real Orca
+>    3D preview (layout, orientation, supports) for the operator to SEE before anything prints.
+>    Local desktop → open the actual window. Remote → send Orca preview screenshots.
+>    NEVER present a silent headless slice as "the preview."
+> 2. **OPERATOR APPROVES** (explicit "go"). Never auto-start.
+> 3. **START the print** via Moonraker.
+> 4. **PRESENT Fluidd** (:4408) + live camera (:8080) so the operator monitors in near real time.
+>
 > Canonical deep-dives: `docs/PRINT-OPERATIONS.md` (full workflow), `docs/ORCA.md` + the
 > `orcaslicer` Hermes skill (slicer specifics), `docs/sd-flashing-guide.md` (firmware).
 > Last verified: 2026-08-19 (printer ONLINE, `state: ready`).
@@ -27,7 +36,7 @@
 | Filament | Black or white **PLA only** (single extruder → one color per job). Shelf: 2× black, 2× white. |
 | Print volume | 220 × 220 × 250 mm, 0.4 mm nozzle |
 | Presets | Quality: 0.20 / 3 walls / 20% gyroid. Fast: 0.28 / 2 walls / 15% rectilinear. Temps **200/55**. |
-| Calibration | PA 0.033, input shaping X 72.8 / Y 48.4, Z-offset **1.70** (re-bake after any reflash) |
+|| Calibration | Z-offset **1.70** baked. PA and input shaping **NOT present in live config** (per 2026-08-19 audit; claimed in handoffs but lost during config rebuilds — verify/re-apply before claiming). |
 
 **The host is NOT always powered.** Check reachability before anything else:
 
@@ -40,8 +49,17 @@ If it hangs, the Zero 3W is off — power it on (or tell the operator) before pr
 
 ---
 
-## 1. The one-shot script (fastest path — use this)
+## 1. The workflow — PREVIEW FIRST, then one-shot print
 
+**Step 0 — PREVIEW (mandatory, operator-driven):** Before anything prints, present the part in
+**OrcaSlicer's full GUI** so the operator can SEE layout, orientation, and supports.
+- **Local desktop:** launch the real Orca window with the part loaded + sliced + 3D preview
+  open: `~/Applications/OrcaSlicer.AppImage /path/to/part.stl` (then slice in the GUI).
+- **Remote:** slice (GUI-equivalent view) and send the operator **Orca 3D preview screenshots**
+  (top/side/isometric) showing orientation + supports.
+- Wait for the operator's explicit "go". **NEVER present a silent headless slice as the preview.**
+
+**Step 1 — slice + splice + upload + (start):**
 Everything below is wrapped in `PRINTS/slice_print.py`:
 
 ```bash
@@ -296,6 +314,4 @@ curl -s "http://192.168.0.18:7125/printer/objects/query?print_stats=state&virtua
 curl -s -X POST "http://192.168.0.18:7125/printer/emergency_stop"
 ```
 
-**Golden rules:** slicer decides orientation/supports · splice every gcode · verify bed target
-55 · print a skirt · test strength · flash with a small card only · never auto-start without
-operator "go".
+**Golden rules:** preview in the FULL Orca GUI (never a silent headless slice) · operator approves each part · then start · then present Fluidd+camera · slicer decides orientation/supports · splice every gcode · verify bed target 55 · print a skirt · test strength · flash with a small card only · never auto-start without operator "go".
