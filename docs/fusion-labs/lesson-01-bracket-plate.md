@@ -1,7 +1,7 @@
 # Lesson 1 — Your First Part: the JeNo7 Antenna + CV50 Bracket Plate
 
 **Part you'll recreate:** the `JeNo7 ant and cv50 bracket.3mf` you already have
-(now in `DRONE Builds/JeNo7/Sentinel-on-JeNo7/`). We're going to rebuild it from
+(now in `Drones/JeNo7/Sentinel-on-JeNo7/`). We're going to rebuild it from
 scratch in Fusion — and because you build it from measurements, you end up with a
 **parametric** part you can change later (thicker plate? bigger holes? done in 30
 seconds instead of redrawing).
