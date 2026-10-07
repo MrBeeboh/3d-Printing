@@ -1,0 +1,15 @@
+Job: fpv-vrx-mount.stl
+Printer: Elegoo Centauri Carbon 2 (C2) @ 192.168.0.24
+Material: PETG black
+Size (bbox): ~30 x 40 x 8 mm
+
+ElegooSlicer starting preset (Formfortis / C2-PETG-preset):
+- Nozzle 240 C
+- Bed 65 C (textured PEI)
+- Flow 0.96
+- Max volumetric 6 mm3/s
+- Fan 30%/30%, first 3 layers uncooled
+- Retract 0.2 mm @ 30 mm/s, Z-hop 0.4 mm
+- Layer 0.2 mm, infill ~15%, walls 2
+
+Operator asked to print — slice on Fred ElegooSlicer, send to C2, start when plate is clear and black PETG is loaded.
