@@ -1,0 +1,4 @@
+ZOHD Altus HD FPV Nose (Walksnail and others) by Painless360 on Thingiverse: https://www.thingiverse.com/thing:6577267
+
+Summary:
+Here is my first version of a nose for the ZOHD Altus - https://youtu.be/j2htdXoaSx8This is several versions on from the one I used in the video and should work for those who want to follow along. Two versions are here - one with stand-offs for one without. Mounting holes are 30.5mm and there is a cutout on the stand-offs for a single 3mm cable tie to secure the unit.Print with decent infill in PETg or PLA-Tough would be my advice. In terms of camera alignment, I've found that aligning the camera with this bezel will result in an Image with too much ground. I'd tilt it up a fraction so that the horizon is level in the screen.. Happy flying!Happy flying!

@@ -1,0 +1,22 @@
+LX7 full CAD delivery
+=====================
+File: LX7.step
+Size: 24315359 bytes
+SHA256: 8b9366a7ca06dda00ba33265705a3024f04fdd2a51be25eafdc0f90f73065119
+Format: ISO-10303-21 STEP (AUTOMOTIVE_DESIGN), FreeCAD/Open CASCADE export dated 2025-04-26
+Bounding box (Marathon metadata): 275.28 × 251.93 × 44.13 mm (~250×272 class)
+
+Source URL (public CDN, no login):
+  https://d1d8a3050v4fu6.cloudfront.net/680d6df54366ea6baf6e8fb3/680d6df54366ea6baf6e8fb3.step
+Listing page:
+  https://marathon-os.com/library/lx7-folding-7in-fpv-frame-downloadable-680d6df54366ea6baf6e8fb3
+License noted on page: CC BY 4.0
+
+NOT used (junk explode STLs): MakerWorld/obj_* zip already on disk.
+Cults FPV_Lab / CZgunguy were Cloudflare-walled from this box; not required once Marathon STEP obtained.
+
+HAL placement (parent must run with machineId bfbf9d0e-baff-469b-954c-98a4b51c7fe2):
+  mkdir -p "/home/mike/Documents/3d_Printing/PRINTS/LX7 FPV/full"
+  curl -fsSL -o "/home/mike/Documents/3d_Printing/PRINTS/LX7 FPV/full/LX7.step" \
+    "https://d1d8a3050v4fu6.cloudfront.net/680d6df54366ea6baf6e8fb3/680d6df54366ea6baf6e8fb3.step"
+  ls -la "/home/mike/Documents/3d_Printing/PRINTS/LX7 FPV/full/"
