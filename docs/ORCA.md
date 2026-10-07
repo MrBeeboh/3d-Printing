@@ -6,6 +6,10 @@ Skill (full CLI/support table): Hermes `orcaslicer`.
 **Slicer of record:** OrcaSlicer 2.4.2 AppImage. Not PrusaSlicer. Not OctoPrint.
 **New AIs: start with `AI-QUICKSTART.md`** (self-contained) — this file is the shop-depth slicer notes.
 
+## TPU
+
+When the spool is TPU, use `docs/TPU.md` — process `0.20mm TPU @Ender-3 V3 SE` + filament `Overture TPU @Ender-3 V3 SE`. Do not pair TPU with the PLA speed process.
+
 ## Layout is the slicer’s job
 
 ```

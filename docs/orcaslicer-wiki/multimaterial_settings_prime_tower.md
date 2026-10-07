@@ -1,0 +1,141 @@
+# SOURCE: https://www.orcaslicer.com/wiki/print_settings/multimaterial/multimaterial_settings_prime_tower.html
+
+[Skip to content](https://www.orcaslicer.com/wiki/print_settings/multimaterial/multimaterial_settings_prime_tower#prime-tower)
+
+# Prime Tower [¶](https://www.orcaslicer.com/wiki/print_settings/multimaterial/multimaterial_settings_prime_tower\#prime-tower)
+
+[Modes](https://www.orcaslicer.com/wiki/general_settings/option_mode.html):
+
+`Simple` [Variables](https://www.orcaslicer.com/wiki/developer_reference/built_in_placeholders_variables.html): `enable_prime_tower`, `prime_volume`.
+
+`Advanced` [Variables](https://www.orcaslicer.com/wiki/developer_reference/built_in_placeholders_variables.html): `prime_tower_skip_points`, `enable_tower_interface_features`, `enable_tower_interface_cooldown_during_tower`, `prime_tower_enable_framework`, `prime_tower_infill_gap`, `single_extruder_multi_material_priming`.
+
+The wiping tower can be used to clean up the residue on the nozzle and "
+"stabilize the chamber pressure inside the nozzle, in order to avoid "
+"appearance defects when printing objects.
+
+## Width [¶](https://www.orcaslicer.com/wiki/print_settings/multimaterial/multimaterial_settings_prime_tower\#width)
+
+[Mode](https://www.orcaslicer.com/wiki/general_settings/option_mode.html): `Simple`.
+
+[Variable](https://www.orcaslicer.com/wiki/developer_reference/built_in_placeholders_variables.html): `prime_tower_width`.
+
+Width of the prime tower.
+
+## Brim width [¶](https://www.orcaslicer.com/wiki/print_settings/multimaterial/multimaterial_settings_prime_tower\#brim-width)
+
+[Mode](https://www.orcaslicer.com/wiki/general_settings/option_mode.html): `Advanced`.
+
+[Variable](https://www.orcaslicer.com/wiki/developer_reference/built_in_placeholders_variables.html): `prime_tower_brim_width`.
+
+Width of the brim around the prime tower.
+
+## Wipe Tower Rotation Angle [¶](https://www.orcaslicer.com/wiki/print_settings/multimaterial/multimaterial_settings_prime_tower\#wipe-tower-rotation-angle)
+
+[Mode](https://www.orcaslicer.com/wiki/general_settings/option_mode.html): `Advanced`.
+
+[Variable](https://www.orcaslicer.com/wiki/developer_reference/built_in_placeholders_variables.html): `wipe_tower_rotation_angle`.
+
+Wipe tower rotation angle with respect to x-axis.
+
+## Maximal bridging distance [¶](https://www.orcaslicer.com/wiki/print_settings/multimaterial/multimaterial_settings_prime_tower\#maximal-bridging-distance)
+
+[Mode](https://www.orcaslicer.com/wiki/general_settings/option_mode.html): `Advanced`.
+
+[Variable](https://www.orcaslicer.com/wiki/developer_reference/built_in_placeholders_variables.html): `wipe_tower_bridging`.
+
+Maximal distance between supports on sparse infill sections.
+
+## Wipe tower purge lines spacing [¶](https://www.orcaslicer.com/wiki/print_settings/multimaterial/multimaterial_settings_prime_tower\#wipe-tower-purge-lines-spacing)
+
+[Mode](https://www.orcaslicer.com/wiki/general_settings/option_mode.html): `Advanced`.
+
+[Variable](https://www.orcaslicer.com/wiki/developer_reference/built_in_placeholders_variables.html): `wipe_tower_extra_spacing`.
+
+Spacing of purge lines on the wipe tower.
+
+## Extra flow for purge [¶](https://www.orcaslicer.com/wiki/print_settings/multimaterial/multimaterial_settings_prime_tower\#extra-flow-for-purge)
+
+[Mode](https://www.orcaslicer.com/wiki/general_settings/option_mode.html): `Advanced`.
+
+[Variable](https://www.orcaslicer.com/wiki/developer_reference/built_in_placeholders_variables.html): `wipe_tower_extra_flow`.
+
+Extra flow used for the purging lines on the wipe tower. This makes the purging lines thicker or narrower than they normally would be. The spacing is adjusted automatically.
+
+## Maximum wipe tower print speed [¶](https://www.orcaslicer.com/wiki/print_settings/multimaterial/multimaterial_settings_prime_tower\#maximum-wipe-tower-print-speed)
+
+[Mode](https://www.orcaslicer.com/wiki/general_settings/option_mode.html): `Advanced`.
+
+[Variable](https://www.orcaslicer.com/wiki/developer_reference/built_in_placeholders_variables.html): `wipe_tower_max_purge_speed`.
+
+The maximum print speed when purging in the wipe tower and printing the wipe tower sparse layers. When purging, if the sparse infill speed or calculated speed from the filament max volumetric speed is lower, the lowest will be used instead.
+
+When printing the sparse layers, if the internal perimeter speed or calculated speed from the filament max volumetric speed is lower, the lowest will be used instead.
+
+Increasing this speed may affect the tower's stability as well as increase the force with which the nozzle collides with any blobs that may have formed on the wipe tower.
+
+Before increasing this parameter beyond the default of 90 mm/s, make sure your printer can reliably bridge at the increased speeds and that ooze when tool changing is well controlled.
+
+For the wipe tower external perimeters the internal perimeter speed is used regardless of this setting.
+
+## Wall type [¶](https://www.orcaslicer.com/wiki/print_settings/multimaterial/multimaterial_settings_prime_tower\#wall-type)
+
+[Mode](https://www.orcaslicer.com/wiki/general_settings/option_mode.html): `Advanced`.
+
+[Variable](https://www.orcaslicer.com/wiki/developer_reference/built_in_placeholders_variables.html): `wipe_tower_wall_type`.
+
+Wipe tower outer wall type.
+
+### Rectangle [¶](https://www.orcaslicer.com/wiki/print_settings/multimaterial/multimaterial_settings_prime_tower\#rectangle)
+
+The default wall type, a rectangle with fixed width and height.
+
+### Cone [¶](https://www.orcaslicer.com/wiki/print_settings/multimaterial/multimaterial_settings_prime_tower\#cone)
+
+A cone with a fillet at the bottom to help stabilize the wipe tower.
+
+#### Stabilization cone apex angle [¶](https://www.orcaslicer.com/wiki/print_settings/multimaterial/multimaterial_settings_prime_tower\#stabilization-cone-apex-angle)
+
+[Mode](https://www.orcaslicer.com/wiki/general_settings/option_mode.html): `Advanced`.
+
+[Variable](https://www.orcaslicer.com/wiki/developer_reference/built_in_placeholders_variables.html): `wipe_tower_cone_angle`.
+
+Angle at the apex of the cone that is used to stabilize the wipe tower. Large angle means wider base.
+
+### Rib [¶](https://www.orcaslicer.com/wiki/print_settings/multimaterial/multimaterial_settings_prime_tower\#rib)
+
+Adds four ribs to the tower wall for enhanced stability.
+
+#### Extra rib length [¶](https://www.orcaslicer.com/wiki/print_settings/multimaterial/multimaterial_settings_prime_tower\#extra-rib-length)
+
+[Mode](https://www.orcaslicer.com/wiki/general_settings/option_mode.html): `Advanced`.
+
+[Variable](https://www.orcaslicer.com/wiki/developer_reference/built_in_placeholders_variables.html): `wipe_tower_extra_rib_length`.
+
+Positive values can increase the size of the rib wall, while negative values can reduce the size. However, the size of the rib wall can not be smaller than that determined by the cleaning volume.
+
+#### Rib width [¶](https://www.orcaslicer.com/wiki/print_settings/multimaterial/multimaterial_settings_prime_tower\#rib-width)
+
+[Mode](https://www.orcaslicer.com/wiki/general_settings/option_mode.html): `Advanced`.
+
+[Variable](https://www.orcaslicer.com/wiki/developer_reference/built_in_placeholders_variables.html): `wipe_tower_rib_width`.
+
+Width of the rib wall.
+
+#### Fillet wall [¶](https://www.orcaslicer.com/wiki/print_settings/multimaterial/multimaterial_settings_prime_tower\#fillet-wall)
+
+[Mode](https://www.orcaslicer.com/wiki/general_settings/option_mode.html): `Advanced`.
+
+[Variable](https://www.orcaslicer.com/wiki/developer_reference/built_in_placeholders_variables.html): `wipe_tower_fillet_wall`.
+
+The wall of prime tower will fillet.
+
+## No sparse layers [¶](https://www.orcaslicer.com/wiki/print_settings/multimaterial/multimaterial_settings_prime_tower\#no-sparse-layers)
+
+[Mode](https://www.orcaslicer.com/wiki/general_settings/option_mode.html): `Advanced`.
+
+[Variable](https://www.orcaslicer.com/wiki/developer_reference/built_in_placeholders_variables.html): `wipe_tower_no_sparse_layers`.
+
+If enabled, the wipe tower will not be printed on layers with no tool changes. On layers with a tool change, extruder will travel downward to print the wipe tower. User is responsible for ensuring there is no collision with the print.
+
+Back to top

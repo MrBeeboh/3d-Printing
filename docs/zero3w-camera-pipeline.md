@@ -79,6 +79,7 @@ Once LED installed, re-tune: likely drop gain toward 500-700 and gamma toward 1.
 
 ## ROBUSTNESS (2026-08-20) — self-healing verified
 - **Camera self-heal:** http.py now re-runs printer-cam-setup.sh after 3 consecutive gst failures (media-ctl/format/flips re-established). TESTED: force-killed gst mid-stream, it recovered a real image on its own — no manual power cycle.
+- **Brightness = ambient only (2026-08-20, Harold's decisive test):** heated bed 54.1C left frame at mean 27.3 (vs 26.8 cold) — OV5647 M12 lens has an IR-cut filter, so bed heat/IR contributes NO visible light. Do NOT tune exposure/gain against bed warmth. Dark frame with cold idle printer = correct manual-AE read of a dim scene. LED bar (arriving 2026-08-20) is the only real brightness fix.
 - **MCU USB drop (powersave)**: `usbcore.autosuspend=-1` in /proc/cmdline + live; no suspend timers/targets exist. Nothing can sleep the board.
 - **Klipper wedge after failed print**: klipper-recover.timer polls every 30s, firmware_restarts only when MCU present + klippy error/shutdown + NO active print. Safe — cannot kill a running job.
 - **Crash recovery**: Restart=always on klipper, moonraker, printer-cam (RestartSec 3-10).

@@ -142,6 +142,25 @@ Rules:
   ALWAYS verify the slicer's first-layer footprint in the gcode before printing.
 - Never disable or hand-design supports. Use the slicer's auto supports WITH the
   breakaway interface flags:
+
+  ⚠️ **ORCA-NATIVE KEYS REQUIRED (verified 2026-09-11).** `slice_print.py --supports` injects
+  support settings into the process preset using these exact keys/values — PrusaSlicer names
+  silently produce **zero supports** with no error:
+  ```
+  enable_support                  "1"            # NOT true/1 — presets store "0"/"1"
+  support_type                    "normal(auto)" # NOT "normal" — invalid enum = no supports at all
+  support_style                   "organic"
+  support_threshold_angle         "40"           # NOT support_angle (Prusa-only, ignored)
+  support_on_build_plate_only     "1"            # NOT support_buildplate_only (Prusa-only)
+  support_interface_layers        3
+  support_interface_spacing       "0.3"
+  support_interface_loop_pattern  "1"
+  support_top_z_distance          "0.3"
+  ```
+  A bad enum does NOT raise — Orca just slices with no supports and the part looks fine
+  until the overhangs fail. The 2026-09-11 dachshund slice hit exactly this.
+
+  The Prusa-equivalent CLI flags below are reference only — do NOT use PrusaSlicer itself:
   ```bash
   --support-material --support-material-auto --support-material-angle=40 \
   --support-material-interface-layers=3 \
@@ -151,8 +170,15 @@ Rules:
   ```
   These four settings are what make supports *release*: 3 lattice interface layers, a
   0.3mm air gap, small contact dots instead of solid lines, and no support-on-part.
-- Verify the gcode has `;TYPE:Support material interface` sections (not just
-  `;TYPE:Support material`) — interface sections are the breakaway mechanism.
+- **ALWAYS verify the spliced gcode before claiming supports are on** — grep for BOTH
+  `;TYPE:Support material` and `;TYPE:Support material interface`. Interface sections are the
+  breakaway mechanism; if zero support TYPE lines appear, support generation did not run
+  (check the keys above). Confirm with:
+  ```bash
+  grep -c ';TYPE:Support' /tmp/<name>_orca/plate_1.gcode
+  grep -c ';TYPE:Support material interface' /tmp/<name>_orca/plate_1.gcode
+  ```
+
 
 **ALWAYS verify what actually touches the bed BEFORE starting a long print.**
 

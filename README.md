@@ -41,7 +41,7 @@ Then, in order: `AGENTS.md` (project conventions) → `docs/PRINT-OPERATIONS.md`
   (`usbcore.autosuspend=-1`, USB keep-on, print-aware `klipper-recover.timer`). See
   `docs/MCU-USB-AUTOSUSPEND-INCIDENT-2026-08-19.md`.
 - **Print quality:** best print yet visually (a **skirt** helped the first layer), but the user
-  said it "still seems fragile" / "stuck together" — **physical strength tests required**
+  said it "still seems fragile" / "stuck together" — workflow feels fragile (flash, wave application, one-command reliability). Print itself looked great.
   (see `AI-QUICKSTART.md` §10). No `WAVE_OVERHANG` markers in recent slices → wave mode not used.
 - **Firmware:** MCU still reports old `1.0.0-6` in logs — a prior flash likely didn't take because
   a **32 GB card** was used. Re-flash with a **small (≤8 GB) card only** (see §Firmware + `docs/sd-flashing-guide.md`).
@@ -76,8 +76,9 @@ curl -s "http://192.168.0.18:7125/printer/objects/query?print_stats=state&virtua
 | `docs/ORCA.md` | OrcaSlicer shop notes (CLI, supports, layer heights, calibration order). |
 | `docs/sd-flashing-guide.md` | Firmware flash — **small card only**, 8.3 filename, exact sequence. |
 | `docs/PRINTER-STATUS.md` | Live status (current/ready). |
-| `docs/MCU-USB-AUTOSUSPEND-INCIDENT-2026-08-19.md` | USB-drop root cause + fix (host autosuspend). |
-| `PRINTS/slice_print.py` | One-shot slice→splice→upload→start script (read its docstring). |
+|| `docs/MCU-USB-AUTOSUSPEND-INCIDENT-2026-08-19.md` | USB-drop root cause + fix (host autosuspend). |
+|| `PRINTS/slice_print.py` | One-shot slice→splice→upload→start script (read its docstring). |
+|| `docs/hermes-bot-mode-tutorial.md` | **How to use the bot team** (spawning experts, overnight autonomous work, Telegram, kanban). Read this to manage the crew. |
 | `docs/upgrade-plan.md` | Master capability upgrade plan (Radxa Zero 3W → V3 SE). |
 | `docs/klipper-host.md` | Zero 3W host, Moonraker/Fluidd access, flash toolkit. |
 | `docs/firmware.md`, `docs/printer-hardware.md` | Which firmware / board + C13-vs-C14 MCU split. |
@@ -111,3 +112,11 @@ curl -s "http://192.168.0.18:7125/printer/objects/query?print_stats=state&virtua
 - Klipper fork source (jpcurti): `~/Downloads/zero3-flash/ender3-v3-se-klipper-with-display/` (official docs in `e3v3se_docs/`)
 - Zero 3W flash toolkit: `~/Downloads/zero3-flash/` (rkdeveloptool, maskrom loaders, Debian image)
 - OrcaSlicer wiki (cached): `docs/orcaslicer-wiki/`
+
+## Overnight work (2026-08-19)
+User clarified: recent print looks great. "Fragile/stuck together" means the **workflow** (flash reliability, wave application, agent handoffs, one-command printing).
+
+See `docs/OVERNIGHT-STATUS-2026-08-19.md` for what the team is fixing while you sleep.
+
+Bots running: wave overhangs expert + full workflow audit.
+Bot tutorial + graphics + audio delivered to `docs/`.
