@@ -1,0 +1,12 @@
+{
+  "type": "filament",
+  "name": "Creality Generic PLA Blue (bulk)",
+  "from": "user",
+  "instantiation": "true",
+  "inherits": "Creality Generic PLA @Ender-3V3-all",
+  "default_filament_colour": "#0055D4",
+  "filament_colour": ["#0055D4"],
+  "text_color": "#FFFFFF",
+  "compatible_printers": ["Creality Ender-3 V3 SE 0.4 nozzle"],
+  "setting_id": "Creality_Generic_PLA_Blue"
+}
