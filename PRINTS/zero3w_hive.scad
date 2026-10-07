@@ -241,10 +241,19 @@ module snap_barb_end(outward = 1) {
 
 module lid_label() {
     // Solid front frame, not over the lattice, so the letters survive F6.
-    translate([ox / 2, 3.7, hook_len + lid_t - 0.5])
+    // Label stays at the FRONT edge (Y=3.7) — the back edge is the GPIO
+    // cutout zone and would swallow it. The exported lid STL is flipped
+    // 180deg about the Y axis before slicing (panel-down print
+    // orientation): front stays front, left<->right swap, top<->bottom.
+    // So the label is drawn mirrored in X at the panel underside
+    // (Z=hook_len, 0.6 deep) — after the flip it lands engraved on the
+    // TOP face, front edge, reading correctly. Do NOT change this without
+    // also changing the flip step.
+    translate([ox / 2, 3.7, hook_len])
         linear_extrude(0.6)
-            text("ZERO 3W", size = 3.8, font = "Liberation Sans:style=Bold",
-                 halign = "center", valign = "center", spacing = 1.08);
+            mirror([1, 0, 0])
+                text("ZERO 3W", size = 3.8, font = "Liberation Sans:style=Bold",
+                     halign = "center", valign = "center", spacing = 1.08);
 }
 
 module lid() {
@@ -255,10 +264,15 @@ module lid() {
             // One snap on each short end (CSI and microSD). They oppose
             // each other. Windows in the base let you press the barb in
             // from outside to release — otherwise these are hard to open.
-            translate([wall - hook_t - hook_gap, hook_y() - hook_w / 2, 0])
-                snap_barb_end(1);
-            translate([ox - wall + hook_gap, hook_y() - hook_w / 2, 0])
+            // The barb BEAM sits INSIDE the cavity (set back by the wall
+            // thickness + hook_gap); the CATCH points OUTWARD into the
+            // base's snap window. Original placement (beam inside the wall
+            // footprint, catch pointing into the base) collided with the
+            // wall on seating — fixed 2026-08-16 per operator.
+            translate([wall + hook_gap - 0.5, hook_y() - hook_w / 2, 0])
                 snap_barb_end(-1);
+            translate([ox - wall - hook_gap - hook_t + 0.5, hook_y() - hook_w / 2, 0])
+                snap_barb_end(1);
         }
         // hex lattice through the lid plate, clipped to an inner window
         translate([0, 0, hook_len - 0.1])
