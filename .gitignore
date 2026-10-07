@@ -6,3 +6,54 @@ __pycache__/
 .cursor/
 *.3mf.bak
 PRINTS/xdg-config/
+
+# ---- generated slicer output: reproducible from the sources beside it ----
+*.gcode
+*.mp4
+*.tgz
+00000.log
+
+# ---- third-party model payloads (downloaded, not authored here) ---------
+# Provenance text (ATTRIBUTION.md / README.txt / SOURCE.txt) is NOT ignored:
+# the repo records where each vendor model came from. Nothing deleted from disk.
+PRINTS/vendor/**
+!PRINTS/vendor/**/ATTRIBUTION.md
+PRINTS/ESP32-32E/**
+PRINTS/LX7 FPV/**
+PRINTS/Gecko/**
+PRINTS/cc2-benchy/**
+PRINTS/Bob the Builder/**
+PRINTS/3d prints/**
+PRINTS/Hinge/**
+PRINTS/desktop-tool-rack/**
+!PRINTS/desktop-tool-rack/README.txt
+!PRINTS/desktop-tool-rack/LICENSE.txt
+PRINTS/files/**
+PRINTS/rtk_box/stl/**
+Print files/**
+PRINTS/*.zip
+PRINTS/*.3mf
+firmware/*.zip
+docs/ElegooSlicer User Manual_V2.7.pdf
+docs/bot-hero-workshop.png
+docs/bot-card-team.png
+docs/bot-tutorial-narration.mp3
+PRINTS/images/*.JPG
+
+# ---- bulky artifacts kept on disk only ----------------------------------
+# Either reproducible from the committed .scad/.f3d sources beside them, or
+# vendor downloads. Kept locally for printing; deliberately not versioned.
+# Nothing deleted from disk.
+CYD Cases/enclosure-for-sunton-esp32-2432s028r-cheap-yellow-display-model_files.zip
+CYD Cases/esp32-32e-case-esp32-32e-back.step
+CYD Cases/esp32-32e-case-esp32-32e-labled-back.step
+CYD Cases/esp32-32e-case-front-and-back_labeled.3mf
+PRINTS/CC2_DROP/can-we-fix-it.stl
+PRINTS/CC2_DROP/lx7-stls.zip
+PRINTS/Flexi-Dachshund/Flexi_Dachshund.stl
+PRINTS/Flexi-Dachshund/model-docs.pdf
+PRINTS/iflight-nazgul-eco-tail.step
+PRINTS/stl/twnzl_mount_flat.stl
+PRINTS/stl/twnzl_mount_skinned.stl
+PRINTS/stl/twnzl_truss_pad_3d.stl
+PRINTS/stl/twnzl_truss_pad_print.stl
